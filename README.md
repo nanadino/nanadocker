@@ -4,10 +4,6 @@
 
 <br>
 
-
-
-<br>
-
 ## 📍 Outline
 - [1️⃣ Contributors](#1%EF%B8%8F⃣-contributors)
 - [2️⃣ Contents](#2%EF%B8%8F⃣-contents)
