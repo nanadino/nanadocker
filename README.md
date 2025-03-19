@@ -8,9 +8,9 @@
 
 <br>
 
-## 📍 Contents
+## 📍 Outline
 - [1️⃣ Contributors](#1%EF%B8%8F⃣-contributors)
-- [2️⃣ Target](#2%EF%B8%8F⃣-target)
+- [2️⃣ Contents](#2%EF%B8%8F⃣-contents)
 - [3️⃣ Performance Optimization](#3%EF%B8%8F⃣-performance-optimization)
 - [4️⃣ Trouble Shooting](#4%EF%B8%8F⃣-trouble-shooting)
 - [5️⃣ Retrospective](#5%EF%B8%8F⃣-retrospective)
@@ -28,7 +28,7 @@
 
 <br>
 
-## 2️⃣ Target
+## 2️⃣ Contents
 
 <br> 
 <br>
