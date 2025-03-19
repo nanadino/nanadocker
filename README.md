@@ -13,7 +13,6 @@
 - [2️⃣ Contents](#2%EF%B8%8F⃣-contents)
 - [3️⃣ Performance Optimization](#3%EF%B8%8F⃣-performance-optimization)
 - [4️⃣ Trouble Shooting](#4%EF%B8%8F⃣-trouble-shooting)
-- [5️⃣ Retrospective](#5%EF%B8%8F⃣-retrospective)
 
 <br>
 <br>
@@ -38,6 +37,8 @@
 
 <br>
 
+⚠️ **원본 코드**
+
 ```
 # 1. 공식 OpenJDK 기반 이미지 사용 (JDK 17)
 FROM openjdk:17
@@ -53,22 +54,49 @@ CMD ["java", "-jar", "myapp.jar"]
 ```
 
 
+<br>
+<br>
+
+
+✅ **최적화 방법 1 : 스테이지 분리**
+<br>
 
 ```
 # 빌드 스테이지
 FROM eclipse-temurin:17-jdk-alpine AS builder
 WORKDIR /app
 COPY myapp.jar app.jar
+
 # 실행 스테이지 (최적화)
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 COPY --from=builder /app/app.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
 ```
-
+멀티 스테이지 빌드는 빌드 환경과 실행 환경을 분리하여 최종 이미지 크기를 최소화할 수 있다. 
+실행 환경에서는 애플리케이션을 실행하는 데 필요한 최소한의 구성만 포함된다.
 
 
 <br>
+
+✅ **최적화 방법 2**
+<br>
+
+기존에는 OpenJDK 기반 이미지를 사용하였으나 alpine 기반 이미지를 사용해 jdk와 jre 이미지 크기를 줄였다.
+
+
+<br>
+
+✅ **결과**
+
+![image (7)](https://github.com/user-attachments/assets/872bc12b-4f7b-4865-a320-2926764c4530)
+
+용량이 절반정도 감소하였다.
+
+
+<br>
+<br>
+
 
 
 ## 4️⃣ Trouble Shooting
@@ -76,7 +104,6 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 <br>
 <br>
 
-## 5️⃣ Retrospective
 
-<br>
-<br>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=C1F0FF&height=150&section=footer" width="1000" />
