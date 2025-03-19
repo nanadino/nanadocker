@@ -26,6 +26,31 @@
 ## 2️⃣ Contents
 
 <br> 
+
+이미지 만들기
+Dockerfile
+
+```
+# 1. 공식 OpenJDK 기반 이미지 사용
+FROM openjdk:17
+
+# 2. 작업 디렉토리 설정
+WORKDIR /app
+
+# 3. 빌드된 JAR 파일을 컨테이너로 복사
+COPY ./myapp.jar myapp.jar
+
+# 4. 실행 명령 설정 (JAR 파일 실행)
+CMD ["java", "-jar", "myapp.jar"]
+```
+
+![image (9)](https://github.com/user-attachments/assets/c2fc85e7-7d6e-4d58-9319-d9ed77d8f6a3)
+
+
+![image (10)](https://github.com/user-attachments/assets/bbcff9d9-f569-4ef5-80ff-33fac8b03f1c)
+
+
+
 <br>
 
 
