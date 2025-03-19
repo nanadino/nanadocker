@@ -103,16 +103,28 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 ✅ **최적화 방법 2**
 <br>
 
+alpine 추가 부분
+
+![image](https://github.com/user-attachments/assets/7c0a0a2c-adfc-467a-ac4e-1bdb8b240f39)
+
 기존에는 OpenJDK 기반 이미지를 사용하였으나 alpine 기반 이미지를 사용해 jdk와 jre 이미지 크기를 줄였다.
 
 
+<br>
+
+✅ **최적화 방법 3(추가예정)**
+
+<br>
+add --no-cache bash 로 패키지 설치 시 캐시를 저장하지 않게하여 이미지 크기를 줄일 수 있다.
+
+<br>
 <br>
 
 ✅ **결과**
 
 ![image (7)](https://github.com/user-attachments/assets/872bc12b-4f7b-4865-a320-2926764c4530)
 
-용량이 절반정도 감소하였다.
+결과적으로 Dockerfile 수정을 통해 최적화를 진행한 mongsil159357/myapp 에 해당하는 이미지 파일의 용량이 절반이상 감소하였다.
 
 
 <br>
