@@ -25,9 +25,6 @@
 
 ## 2️⃣ Contents
 
-<br> 
-
-
 ### - Dockerfile 이미지 생성
 
 ```
@@ -47,8 +44,23 @@ CMD ["java", "-jar", "myapp.jar"]
 ### - ```$docker build -t ...``` 명령어를 통한 이미지 생성
 ![image (9)](https://github.com/user-attachments/assets/c2fc85e7-7d6e-4d58-9319-d9ed77d8f6a3)
 
-### ```docker images``` 명령어로 이미지 생성 확인
+### - ```docker images``` 명령어로 이미지 생성 확인
 ![image (10)](https://github.com/user-attachments/assets/bbcff9d9-f569-4ef5-80ff-33fac8b03f1c)
+
+### - ```docker hub``` 에 이미지 업로드
+```
+$ docker push nanahj/jarjar:1.0
+
+$ docker pull nanahj/jarjar:1.0
+
+$ docker run -d -p 8088:8088 --name mytwix nanahj/jarjar:1.0
+```
+
+![image (14)](https://github.com/user-attachments/assets/5a10cde2-e1e5-42e4-8eb7-2576c68145e3)
+
+### - ```localhost:8088``` 에서 실행 확인
+![image (13)](https://github.com/user-attachments/assets/9df054a7-b450-4aea-8347-ffec5e92364f)
+
 
 
 
